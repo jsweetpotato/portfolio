@@ -1,0 +1,25 @@
+@use "sass:string";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.App{
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+}
+
+@debug string.quote("Helvetica");
