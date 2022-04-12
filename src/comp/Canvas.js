@@ -8,7 +8,7 @@ function Canvas() {
     canvas.current.height = window.innerHeight;
     const ctx = canvas.current.getContext("2d");
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.current.width, canvas.current.height);
+    // ctx.fillRect(0, 0, canvas.current.width, canvas.current.height);
   }, [canvas]);
 
   return (

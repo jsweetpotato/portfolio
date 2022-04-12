@@ -1,5 +1,5 @@
-import "./css/utils.min.css";
-import "./css/header.min.css";
+import "./scss/utils.scss";
+import "./scss/header.scss";
 import Header from "./comp/Header";
 import Canvas from './comp/Canvas';
 import Footer from './comp/Footer';

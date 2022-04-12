@@ -3,6 +3,7 @@ header {
   font-size: 2rem;
   display: flex;
   justify-content: space-between;
+  background-color: red;
   .GNB {
     position: absolute;
     width: 30rem;
@@ -13,7 +14,6 @@ header {
     flex-direction: column;
     gap: 4rem;
     font-size: 4rem;
-    
     display: none;
   }
 }
