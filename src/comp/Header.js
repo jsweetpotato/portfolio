@@ -1,8 +1,11 @@
+import Darkmode from '../utils/Darkmode';
+
 function Header() {
   return (
     <header>
       <a href='/' className="logo">JISUKIM</a>
       <nav>
+        <Darkmode/>
         <p className="GNB-btn show">WORK</p>
         <div className="GNB-btn close"></div>
         <ul className="GNB">

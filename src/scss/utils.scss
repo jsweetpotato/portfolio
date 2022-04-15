@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -14,12 +16,19 @@ li {
   list-style-type: none;
 }
 
-.App{
+.App {
   position: relative;
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;          
+    outline: none;
+    z-index: -9;
+    width: 100%;
+  }
 }
 
-canvas {
-  position: absolute;
-}
 
-@debug string.quote("Helvetica");
+
+
