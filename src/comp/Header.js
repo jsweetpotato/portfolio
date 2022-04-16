@@ -1,18 +1,16 @@
-import Darkmode from '../utils/Darkmode';
+import { useState, useEffect } from "react";
+import Darkmode from "../utils/Darkmode";
+import GNB from "./GNB";
+import GNBButton from "./GNBButton";
 
 function Header() {
   return (
     <header>
-      <a href='/' className="logo">JISUKIM</a>
+      <h1>JISUKIM</h1>
       <nav>
-        <Darkmode/>
-        <p className="GNB-btn show">WORK</p>
-        <div className="GNB-btn close"></div>
-        <ul className="GNB">
-          <li className="GNB-list">CSS</li>
-          <li className="GNB-list">CANVAS</li>
-          <li className="GNB-list">ETC</li>
-        </ul>
+        <Darkmode />
+        <GNBButton />
+        <GNB />
       </nav>
     </header>
   );

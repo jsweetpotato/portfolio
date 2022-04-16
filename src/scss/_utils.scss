@@ -1,0 +1,57 @@
+@use "sass:string";
+@use "./color";
+
+*::selection {
+  background-color: color.$selection-light;
+}
+.dark *::selection {
+  background-color: color.$selection-dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.App {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: min(120rem, 90%);
+  flex-direction: column;
+  justify-content: space-between;
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -9;
+    width: 100%;
+  }
+}
+
+.dark {
+  background-color: black;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
+    color: white;
+  }
+}

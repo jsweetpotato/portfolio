@@ -1,0 +1,25 @@
+.GNB {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  font-size: 4rem;
+  display: none;
+
+  .list-item {
+    position: relative;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transform: translateY(6rem);
+    }
+  }
+}
