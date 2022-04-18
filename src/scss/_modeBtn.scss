@@ -4,18 +4,19 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 72px;
-  height: 36px;
+  width: 64px;
+  height: 32px;
   border-radius: 36px;
   outline: 2px solid black;
   border: none;
   overflow: hidden;
   z-index: 1;
+  transform: translateY(2px);
 
   .slider {
     position: absolute;
-    height: 36px;
-    width: 36px;
+    height: 32px;
+    width: 32px;
     background-color: color.$default-light;
     outline: 2px solid black;
     border-radius: 36px;
@@ -30,7 +31,7 @@
     width: 200%;
     height: 100%;
     background: linear-gradient(to right, white 0% 40%, #2a2a2c 60% 100%);
-    transform: translateX(calc(-50% + 36px));
+    transform: translateX(calc(-50% + 32px));
     transition: 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 }
@@ -40,6 +41,6 @@
     transform: translateX(50%);
   }
   &::before {
-    transform: translateX(calc(50% - 36px));
+    transform: translateX(calc(50% - 32px));
   }
 }

@@ -1,5 +1,6 @@
 @use "sass:string";
 @use "./color";
+@use "./font";
 
 *::selection {
   background-color: color.$selection-light;
@@ -12,6 +13,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Inter", "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,7 +34,7 @@ li {
   position: relative;
   display: flex;
   min-height: 100vh;
-  width: min(120rem, 90%);
+  width: min(115rem, 90%);
   flex-direction: column;
   justify-content: space-between;
 
@@ -40,6 +45,7 @@ li {
     outline: none;
     z-index: -9;
     width: 100%;
+    font-family: "Scada";
   }
 }
 

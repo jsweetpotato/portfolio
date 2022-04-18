@@ -1,25 +1,46 @@
+@use "./color";
+@use "./font";
+
 .GNB {
   position: absolute;
   width: 100%;
   min-height: 100vh;
+  padding-top: 10vh;
   left: 0;
   top: 0;
-  padding-top: 10vh;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  font-size: 4rem;
-  display: none;
+  display: flex;
+  pointer-events: none;
 
   .list-item {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 
     span {
       display: block;
-      transform: translateY(6rem);
+      font-size: min(max(1.5rem, 7vmin), 4rem);
+      letter-spacing: -0.2vmin;
+      transform: translateY(8rem);
+      transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &:hover,
+      &:focus {
+        color: color.$hover-light;
+      }
+    }
+  }
+
+  .open & {
+    .list-item {
+      pointer-events: auto;
+      span {
+        transform: translateY(0vmin);
+        // animation: up 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
     }
   }
 }

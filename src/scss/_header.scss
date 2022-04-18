@@ -1,8 +1,20 @@
+@use "./font";
+
 header {
   padding-top: 3vmin;
   position: relative;
-  font-size: 2rem;
   display: flex;
   justify-content: space-between;
+  
+  .title{
+    font-size: 2.25rem;
+    font-weight: 300;
+  }
 
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+  }
 }
