@@ -1,0 +1,101 @@
+@use "./font";
+
+.GNBBtn {
+  position: relative;
+  background: none;
+  border: none;
+  // outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  filter: invert(0%);
+
+  &::before {
+    content: "";
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    width: 1px;
+    height: 1px;
+    transition: 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: -1;
+  }
+
+  .open &::before {
+    border-radius: 50%;
+    box-shadow: 0 0 0 140vmax rgb(216, 217, 220);
+    background-color: rgb(217, 217, 217);
+  }
+
+  .work {
+    display: flex;
+    color: black;
+    font-size: 2.25rem;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;;
+  }
+
+  .hamburguer {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      position: relative;
+      display: block;
+      background: #2d2d2d;
+      width: 80%;
+      height: 2px;
+      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      z-index: 2;
+
+      &::after,
+      &::before {
+        content: "";
+        background: #2d2d2d;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        pointer-events: none;
+      }
+
+      &::after {
+        top: -10px;
+      }
+
+      &::before {
+        bottom: -10px;
+      }
+    }
+  }
+
+  .open & {
+    .work {
+      z-index: 4;
+    }
+
+    .hamburguer {
+      z-index: 4;
+      span {
+        transform: rotate(45deg);
+
+        &::after {
+          transform: rotate(90deg);
+          top: 0;
+        }
+
+        &::before {
+          transform: rotate(90deg);
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.dark .GNBBtn {
+  filter: invert(100%);
+}
