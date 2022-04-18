@@ -6,7 +6,7 @@ const GNBButton = () => {
   const [GNBButton, setGNBButton] = useState();
 
   const addClass = ({ target }) => {
-    target.closest("button").classList.toggle("select");
+    target.closest("nav").classList.toggle("open");
   };
 
   useEffect(() => {
@@ -16,10 +16,14 @@ const GNBButton = () => {
             <span></span>
           </div>
         )
-      : setGNBButton(<p className="work">work</p>);
+      : setGNBButton(<p className="work">WORK</p>);
   }, [isMobile]);
 
-  return <button onClick={addClass}>{GNBButton}</button>;
+  return (
+    <button className="GNBBtn" onClick={addClass}>
+      {GNBButton}
+    </button>
+  );
 };
 
 export default GNBButton;
