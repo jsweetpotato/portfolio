@@ -8,18 +8,22 @@ import Darkmode from "../utils/Darkmode";
 
 function Header() {
   const { isMobile } = useContext(DispatchContext);
-  const [renderDarkmode, setRenderDarkMode] = useState();
-
-  useEffect(() => {
-    isMobile ? setRenderDarkMode("") : setRenderDarkMode(<Darkmode />);
-  }, [isMobile]);
 
   return (
     <header>
-      <h1 className='title'>JISUKIM</h1>
+      <div className="header-top">
+        <h1 className="title">
+          JISUKIM&#8217;&#8202;s
+          <br />
+          PORTFOLIO
+        </h1>
+        <div className="right-btn">
+          <Darkmode />
+          <GNBButton />
+          <div className="bg"> </div>
+        </div>
+      </div>
       <nav>
-        {renderDarkmode}
-        <GNBButton />
         <GNBList />
       </nav>
     </header>
