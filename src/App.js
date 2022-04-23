@@ -33,6 +33,7 @@ const data = [
 
 function App() {
   const [isMobile, setIsMobile] = useState(start);
+  
 
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 700) setIsMobile(false);
