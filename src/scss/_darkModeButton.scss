@@ -1,0 +1,64 @@
+@use "./color";
+
+.mode-btn {
+  background: color.$moon;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid black;
+  gap: 40%;
+  overflow: hidden;
+  transform: scale(0.95) translateX(calc(105% + 2vmin));
+  transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  pointer-events: none;
+  z-index: 2;
+
+  @media (min-width: 40em) {
+    & {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 40em) {
+    & {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  svg {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 50%;
+    height: 50%;
+    transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(-100%);
+  }
+
+  .sun {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.not-mobile {
+  transform: scale(1) translateX(0);
+  pointer-events: auto;
+}
+
+.open .mode-btn {
+  transform: scale(1) translateX(0);
+  pointer-events: auto;
+}
+
+.dark .mode-btn {
+  background: color.$sun;
+  border: 1px solid white;
+
+  svg {
+    transform: translateX(75%);
+  }
+}

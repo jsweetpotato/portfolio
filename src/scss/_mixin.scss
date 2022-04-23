@@ -1,0 +1,22 @@
+$timingfunc: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fade-in($duration) {
+  animation: fade-in #{$duration}ms linear;
+}
+
+.title,
+.license,
+.mode-btn,
+canvas {
+  @include fade-in(1000);
+}
+

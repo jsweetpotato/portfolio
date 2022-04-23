@@ -4,12 +4,12 @@ footer {
   display: flex;
   text-align: center;
   padding-bottom: 3vmin;
+  user-select: none;
 
   .license {
     justify-self: center;
     flex-grow: 1;
     font-size: 0.8rem;
     color: color.$license;
-    pointer-events: none;
   }
 }

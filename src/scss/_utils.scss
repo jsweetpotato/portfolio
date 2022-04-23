@@ -1,6 +1,5 @@
 @use "sass:string";
 @use "./color";
-@use "./font";
 
 *::selection {
   background-color: color.$selection-light;
@@ -16,7 +15,7 @@
 }
 
 body {
-  font-family: "Inter", "Noto Sans KR", sans-serif;
+  font-family:  "Inter","Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,8 +48,12 @@ li {
   }
 }
 
+.dark canvas{
+  background-color: #1c1c1c;
+}
+
 .dark {
-  background-color: black;
+  background-color: #1c1c1c;
 
   h1,
   h2,
