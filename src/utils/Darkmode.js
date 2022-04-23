@@ -12,8 +12,15 @@ const Darkmode = () => {
   }, [isMobile]);
 
   useEffect(() => {
-    if (darkMode) document.querySelector("body").classList.add("dark");
-    if (!darkMode) document.querySelector("body").classList.remove("dark");
+    if (darkMode) {
+      document.querySelector("body").classList.add("dark");
+      // localStorage.setItem("mode", "dark");
+    }
+    if (!darkMode) {
+      document.querySelector("body").classList.remove("dark");
+      // localStorage.setItem("mode", "light");
+    }
+    window.dispatchEvent(new CustomEvent('storage', {"detail": darkMode}) )
   }, [darkMode]);
 
   return (
