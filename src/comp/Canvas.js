@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-
 import { url } from "../data/image.js";
 
 let _ctx;
@@ -83,6 +82,13 @@ function Canvas() {
   const [image, setImage] = useState(null);
   const [ctx, setCtx] = useState(null);
   const [pixels, setPixels] = useState(null);
+  const [mode, setMode] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("storage", ({ detail }) => {
+      setMode(detail);
+    });
+  }, []);
 
   useEffect(() => {
     // image down
@@ -129,11 +135,11 @@ function Canvas() {
       let distance = 6;
 
       if (window.innerWidth < 900) {
-        adjust.x = window.innerWidth / 2 - (distance * height ) / 2;
-        adjust.y = window.innerHeight / 2 - (distance * height ) / 2;
+        adjust.x = window.innerWidth / 2 - (distance * height) / 2;
+        adjust.y = window.innerHeight / 2 - (distance * height) / 2;
       } else {
         adjust.x = window.innerWidth / 2 - (distance * width) / 2;
-        adjust.y = window.innerHeight / 2 - (distance * height + 100) / 2;
+        adjust.y = window.innerHeight / 2 - (distance * height + 50) / 2;
       }
 
       const create = () => {
@@ -176,6 +182,14 @@ function Canvas() {
       animate();
     }
   }, [pixels]);
+
+  useEffect(() => {
+    const leng = particleArray.length;
+    for (let i = 0; i < leng; i++) {
+      if (particleArray[i].color === "black") particleArray[i].color = "white";
+      else if (particleArray[i].color === "white") particleArray[i].color = "black";
+    }
+  }, [mode]);
 
   return (
     <canvas ref={canvas} className="main-canvas">
