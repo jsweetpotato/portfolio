@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { DispatchContext } from "../App.js";
 import { url } from "../data/image.js";
 
 let _ctx;
@@ -12,7 +13,7 @@ const adjust = {};
 const mouse = {
   x: undefined,
   y: undefined,
-  radius: 120,
+  radius: window.innerWidth / 8,
 };
 
 document.addEventListener("mousemove", ({ clientX, clientY }) => {
@@ -83,6 +84,8 @@ function Canvas() {
   const [ctx, setCtx] = useState(null);
   const [pixels, setPixels] = useState(null);
   const [mode, setMode] = useState(false);
+
+  const { isOpen } = useContext(DispatchContext);
 
   useEffect(() => {
     window.addEventListener("storage", ({ detail }) => {
@@ -166,23 +169,31 @@ function Canvas() {
         }
       };
 
-      if (animation) window.cancelAnimationFrame(animation);
-
-      const animate = () => {
-        animation = window.requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
-        const leng = particleArray.length;
-        for (let i = 0; i < leng; i++) {
-          particleArray[i].draw();
-          particleArray[i].update();
-        }
-      };
-
       create();
-      animate();
     }
   }, [pixels]);
 
+  // isOpen
+  useEffect(() => {
+    if (!pixels) return;
+
+    if (animation) window.cancelAnimationFrame(animation);
+
+    function animate() {
+      animation = window.requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
+      const leng = particleArray.length;
+      for (let i = 0; i < leng; i++) {
+        particleArray[i].draw();
+        particleArray[i].update();
+      }
+    }
+
+    isOpen ? window.cancelAnimationFrame(animation) : animate();
+    
+  }, [pixels, isOpen]);
+
+  // darkMode
   useEffect(() => {
     const leng = particleArray.length;
     for (let i = 0; i < leng; i++) {
