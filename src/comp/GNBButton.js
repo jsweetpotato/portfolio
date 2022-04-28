@@ -1,6 +1,7 @@
-const GNBButton = () => {
+const GNBButton = ({ onClick }) => {
   const addClass = ({ target }) => {
     target.closest("header").classList.toggle("open");
+    onClick();
   };
 
   return (

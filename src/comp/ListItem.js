@@ -1,10 +1,10 @@
 import ImageSlider from "./ImageSlider";
 
-const ListItem = ({ text }) => {
+const ListItem = ({ text, dataType, isSelected, onClick }) => {
   return (
-    <li className="list-item">
+    <li onClick={() => onClick()} className={["list-item", isSelected ? "select" : "not-select"].join(" ")}>
       <span>{text}</span>
-      <ImageSlider />
+      <ImageSlider dataType={dataType} />
     </li>
   );
 };

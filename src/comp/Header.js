@@ -7,7 +7,7 @@ import GNBButton from "./GNBButton";
 import Darkmode from "../utils/Darkmode";
 
 function Header() {
-  const { isMobile } = useContext(DispatchContext);
+  const { isOpen, setIsOpen } = useContext(DispatchContext);
 
   return (
     <header>
@@ -19,12 +19,16 @@ function Header() {
         </h1>
         <div className="right-btn">
           <Darkmode />
-          <GNBButton />
+          <GNBButton
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          />
           <div className="bg"> </div>
         </div>
       </div>
       <nav>
-        <GNBList />
+        <GNBList isOpen={isOpen} />
       </nav>
     </header>
   );
