@@ -7,7 +7,6 @@ const Darkmode = () => {
   const { isMobile } = useContext(DispatchContext);
 
   useEffect(() => {
-    console.log(isMobile);
     isMobile ? setMobile("") : setMobile("not-mobile");
   }, [isMobile]);
 
@@ -20,7 +19,7 @@ const Darkmode = () => {
       document.querySelector("body").classList.remove("dark");
       // localStorage.setItem("mode", "light");
     }
-    window.dispatchEvent(new CustomEvent('storage', {"detail": darkMode}) )
+    window.dispatchEvent(new CustomEvent('storage', {"detail": darkMode}))
   }, [darkMode]);
 
   return (
