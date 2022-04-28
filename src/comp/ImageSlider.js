@@ -1,7 +1,11 @@
-const ImageSlider = ({ text}) => {
+import { data } from "../data/data.js";
+import ImageBox from "./ImageBox.js";
+
+const ImageSlider = ({ dataType }) => {
+
   return (
     <div className="image-slider">
-      <span>{text}</span>
+      {data[dataType].map(it => <ImageBox {...it}/>)}
     </div>
   );
 };
