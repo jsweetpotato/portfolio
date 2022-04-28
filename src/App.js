@@ -16,24 +16,28 @@ const data = [
   {
     id: 0,
     text: "RESPONSIVE WEB",
+    dataType: "responsive"
   },
   {
     id: 1,
     text: "CANVAS",
+    dataType: "canvas"
   },
   {
     id: 2,
     text: "REACT",
+    dataType: "react"
   },
   {
     id: 3,
     text: "ECT",
+    dataType: "ect"
   },
 ];
 
 function App() {
   const [isMobile, setIsMobile] = useState(start);
-  
+  const [isOpen, setIsOpen] = useState(false);
 
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 700) setIsMobile(false);
@@ -42,7 +46,7 @@ function App() {
 
   return (
     <DataContext.Provider value={data}>
-      <DispatchContext.Provider value={{ isMobile }}>
+      <DispatchContext.Provider value={{ isMobile, isOpen, setIsOpen }}>
         <div className="App">
           <Header />
           <Canvas />
