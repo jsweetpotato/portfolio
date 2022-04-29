@@ -15,6 +15,9 @@
 }
 
 body {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
   font-family:  "Inter","Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,13 +32,11 @@ li {
 }
 
 .App {
-  margin: 0 auto;
-  position: relative;
   display: flex;
-  min-height: 100vh;
-  width: min(115rem, 90%);
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+  width: min(115rem, 90vw);
 
   canvas {
     position: fixed;
