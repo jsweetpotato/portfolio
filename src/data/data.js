@@ -16,7 +16,7 @@ const data = {
     },
     {
       id: 2,
-      title: "portfolio clonecode",
+      title: "portfolio clone",
       image: "assets/portfolio-clone.png",
       tag: ["Media Queries", "Vanila JS"],
       url: "https://jsweetpotato.github.io/responsive-web-practice4.io/",
@@ -56,7 +56,7 @@ const data = {
     {
       id: 0,
       title: "emotion diary",
-      image: "assets/canvas5.png",
+      image: "assets/emotion.png",
       tag: ["Media Queries", "React Router"],
       url: "https://jsweetpotato-emotion-diary.web.app/",
     },
