@@ -8,32 +8,30 @@
 }
 
 .image-slider {
-  // display: none;
-  min-width: 100%;
-  padding-block: 8vmin;
-  padding-inline: 8vmin;
+  display: flex;
   overflow-x: scroll;
+  gap: 1rem;
+  padding-block: 2rem;
+  padding-inline: 2rem;
   background-color: rgb(212, 212, 212);
-  transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  
+
   .image-box {
     display: flex;
-    width: min(max(80%, 230px), 400px);
-    flex-shrink: 0;
     flex-direction: column;
     align-items: center;
-    border: 1px solid;
-    min-height: 100%;
-    background-color: white;
+    flex-shrink: 0;
+    width: 220px;
     font-size: 1.2rem;
+    background-color: white;
+    border: 1px solid black;
 
     @media (min-width: 40em) {
       font-size: 1.6rem;
     }
 
     img {
-      display: block;
       width: 100%;
+      user-select: none;
       pointer-events: none;
     }
 
@@ -53,8 +51,6 @@
 
       .tags {
         p {
-          display: inline;
-          padding-right: 2vmin;
           font-size: 1.2rem * 0.8;
 
           @media (min-width: 40em) {
