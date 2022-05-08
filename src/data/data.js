@@ -12,7 +12,7 @@ const data = {
       title: "space",
       image: "assets/space.png",
       tag: ["CSS Math Function", "Vanila JS"],
-      url: "jsweetpotato.github.io/spaceweb.io/",
+      url: "https://jsweetpotato.github.io/spaceweb.io/",
     },
     {
       id: 2,
