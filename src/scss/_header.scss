@@ -4,9 +4,11 @@ header {
   justify-content: space-between;
 
   .header-top {
-    width: 100%;
+    position: fixed;
+    width: 90%;
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 
     .title {
       font-size: 1.25rem;

@@ -7,22 +7,19 @@
 .GNB {
   position: absolute;
   width: 100vw;
-  min-height: 100vh;
-  padding-top: calc(8vh + 48px);
+  margin-top: calc(8vh + 48px);
   overflow: hidden;
   user-select: none;
   pointer-events: none;
-  z-index: 2;
-
-  @media (min-width: 40em) {
-    padding-top: calc(8vh + 60px);
-  }
-
   left: 0;
   top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 40em) {
+    padding-top: calc(8vh + 60px);
+  }
 
   .line {
     width: 100%;
@@ -30,27 +27,29 @@
     opacity: 0;
     background-color: rgb(42, 42, 42);
     transform: translate3d(100%, 0, 0);
-    transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
   }
 
   .list-item {
     width: 100%;
     position: relative;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
 
     span {
+      cursor: pointer;
       display: block;
+      width: 100%;
+      text-align: center;
       padding-block: 1em;
-      align-self: center;
       font-size: min(max(1.5rem, 7vmin), 3.5rem);
       letter-spacing: -0.2vmin;
       z-index: 1;
       transform: translate3d(0, 2.5em, 0);
       transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-
       &:hover,
       &:focus {
         color: color.$hover-light;
@@ -71,7 +70,7 @@
   .list-item {
     span {
       transform: translate3d(0, 0, 0);
-      transition: transform 700ms 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
     }
   }
 }

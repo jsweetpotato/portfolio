@@ -15,9 +15,7 @@
 }
 
 body {
-  display: flex;
-  width: 100vw;
-  justify-content: center;
+  height: 100vh;
   font-family:  "Inter","Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,12 +29,11 @@ li {
   list-style-type: none;
 }
 
+
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  width: min(115rem, 90vw);
+  margin: auto;
+  height: 100%;
+  width: min(115rem, 90%);
 
   canvas {
     position: fixed;
@@ -44,8 +41,6 @@ li {
     left: 0;
     outline: none;
     z-index: -9;
-    width: 100%;
-    font-family: "Scada";
   }
 }
 

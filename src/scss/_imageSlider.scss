@@ -47,6 +47,7 @@
 .select {
   .image-slider{
     background-color: lightgray;
+    
     .image-box {
       display: flex;
       width: min(400px, 100%);
@@ -57,7 +58,6 @@
       min-height: 100%;
       gap: 2vmin;
       background-color: whitesmoke;
-      
       font-size: 1.5rem;
       
       img {

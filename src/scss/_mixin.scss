@@ -1,6 +1,12 @@
 $timingfunc: cubic-bezier(0.075, 0.82, 0.165, 1);
 $timingfunc2: cubic-bezier(0.165, 0.84, 0.44, 1);
 $timingfunc3: cubic-bezier(0.19, 1, 0.22, 1);
+$spanSize: 0px;
+
+:export {
+  spanSize: $spanSize;
+  timingFunc: ease-in-out;
+}
 
 @keyframes fade-in {
   0% {
@@ -38,21 +44,21 @@ $timingfunc3: cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
-@keyframes to-bottom {
+@keyframes to-top {
   0% {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, $spanSize, 0);
   }
 }
 
-@-moz-keyframes to-bottom {
+@-moz-keyframes to-top {
   0% {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, $spanSize, 0);
   }
 }
 
@@ -73,8 +79,8 @@ $timingfunc3: cubic-bezier(0.19, 1, 0.22, 1);
   animation: fade-out #{$duration}ms $timing;
 }
 
-@mixin to-bottom($duration, $delay, $timing: linear) {
-  animation: to-bottom #{$duration}ms #{$delay}ms $timing;
+@mixin to-top($duration, $delay, $timing: linear) {
+  animation: to-top #{$duration}ms #{$delay}ms $timing;
 }
 @mixin scale-y($duration, $delay, $timing: linear) {
   animation: scale-y #{$duration}ms #{$delay}ms $timing;
@@ -88,6 +94,10 @@ canvas {
   @include fade-in(1000);
 }
 
+.GNB {
+  @include fade-in(1000);
+}
+
 .show-modal,
 .show-modal::backdrop,
 .modal > * {
@@ -98,8 +108,13 @@ canvas {
 .close-modal::backdrop {
   @include fade-out(500, $timingfunc2);
 }
+.open .GNB {
+  .list-item {
+    span {
+      transition: transform 600ms 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
 
-.GNB {
   .select {
     // transition: 1000ms 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -112,13 +127,11 @@ canvas {
     }
 
     span {
-      @include to-bottom(600, 200, $timingfunc3);
     }
-    .image-slider {
-    }
+
   }
 
   .not-select {
-    // transition: 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
   }
 }
