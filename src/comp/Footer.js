@@ -25,7 +25,7 @@ function Footer() {
     <footer>
       <div className="left-side"></div>
       <div className="license">ⓒ copyright Jisu Kim 2022</div>
-      <div class="right-side">
+      <div className="right-side">
         <button className="open contact-btn" onClick={openModal}>
           CONTACT
         </button>
