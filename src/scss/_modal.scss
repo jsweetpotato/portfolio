@@ -2,7 +2,6 @@
   margin: auto;
   width: min(90%, 60em);
   border: none;
-  // border: 1px solid #1d1d1d;
   padding: calc(1rem + 3vmin);
   text-align: left;
 
@@ -25,6 +24,10 @@
     padding-block: 1rem;
     align-items: center;
     gap: 2vmin;
+
+    &:focus{
+      outline: none;
+    }
 
     @media (max-width: 40em) {
       justify-content: space-between;

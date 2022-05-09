@@ -16,10 +16,12 @@
 
 body {
   height: 100vh;
+  overflow: hidden;
   font-family:  "Inter","Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 a {
   text-decoration: none;
@@ -40,7 +42,6 @@ li {
     top: 0;
     left: 0;
     outline: none;
-    z-index: -9;
   }
 }
 

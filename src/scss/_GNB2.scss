@@ -5,21 +5,13 @@
 }
 
 .GNB {
-  position: absolute;
-  width: 100vw;
-  margin-top: calc(8vh + 48px);
-  overflow: hidden;
-  user-select: none;
+  width: 100%;
+  overflow-y: scroll;
+  // user-select: none;
   pointer-events: none;
-  left: 0;
-  top: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  @media (min-width: 40em) {
-    padding-top: calc(8vh + 60px);
-  }
+  padding-bottom: 10rem;
 
   .line {
     width: 100%;
@@ -28,7 +20,7 @@
     background-color: rgb(42, 42, 42);
     transform: translate3d(100%, 0, 0);
     transition: 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: 1;
+    z-index: 2;
   }
 
   .list-item {
@@ -38,16 +30,17 @@
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
+    z-index: 2;
 
     span {
       cursor: pointer;
       display: block;
       width: 100%;
       text-align: center;
+
       padding-block: 1em;
       font-size: min(max(1.5rem, 7vmin), 3.5rem);
       letter-spacing: -0.2vmin;
-      z-index: 1;
       transform: translate3d(0, 2.5em, 0);
       transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
       &:hover,
@@ -70,7 +63,6 @@
   .list-item {
     span {
       transform: translate3d(0, 0, 0);
-
     }
   }
 }

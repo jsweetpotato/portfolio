@@ -8,7 +8,7 @@ header {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
 
     .title {
       font-size: 1.25rem;
@@ -31,9 +31,17 @@ header {
   }
 
   nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    margin-top: calc(8vh + 48px);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100vw;
     gap: 2vmin;
+    overflow-y: scroll;
+
+    @media (min-width: 40em) {
+      margin-top: calc(8vh + 60px);
+    }
   }
 }
