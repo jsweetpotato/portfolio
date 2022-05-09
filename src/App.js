@@ -7,9 +7,9 @@ import React, { useState } from "react";
 export const DataContext = React.createContext();
 export const DispatchContext = React.createContext();
 
-let start = true;
+let mobile = true;
 if (window.innerWidth >= 700) {
-  start = false;
+  mobile = false;
 }
 
 const data = [
@@ -36,13 +36,13 @@ const data = [
 ];
 
 function App() {
-  const [isMobile, setIsMobile] = useState(start);
+  const [isMobile, setIsMobile] = useState(mobile);
   const [isOpen, setIsOpen] = useState(false);
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 700) setIsMobile(false);
-    if (window.innerWidth < 700) setIsMobile(true);
-  });
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth >= 700) setIsMobile(false);
+  //   if (window.innerWidth < 700) setIsMobile(true);
+  // });
 
   return (
     <DataContext.Provider value={data}>
