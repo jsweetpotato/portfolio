@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import ImageSlider from "./ImageSlider";
 import mixin from "../scss/_mixin.scss";
 
@@ -7,7 +7,6 @@ const ListItem = ({ height, text, dataType, isSelected, onClick }) => {
   // 여기서 isSelect가 변화하면 currenteHeight를 height로 변경시켜줌
   // 그리고 그 currentHeight를 전달
 
-  const slider = useRef(null);
   const li = useRef(null);
   const span = useRef(null);
 
@@ -34,8 +33,8 @@ const ListItem = ({ height, text, dataType, isSelected, onClick }) => {
   return (
     <li
       ref={li}
-      onClick={() => onClick(slider)}
-      className={["list-item", isSelected ? "select" : "not-select"].join(" ")}>
+      onClick={() => onClick()}
+      className={"list-item"}>
       <span ref={span}>{text}</span>
       <ImageSlider size={mixin.spanSize} isSelected={isSelected} dataType={dataType} />
     </li>
