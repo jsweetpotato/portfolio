@@ -8,9 +8,14 @@ import Darkmode from "../utils/Darkmode";
 
 function Header() {
   const { isOpen, setIsOpen } = useContext(DispatchContext);
+  const [isNavClicked, setIsNavClicked] = useState();
 
   return (
-    <header>
+    <header
+      onClick={({ target }) => {
+        if (!target.closest(".list-item")) setIsNavClicked();
+        else setIsNavClicked(true);
+      }}>
       <div className="header-top">
         <h1 className="title">
           JISUKIM&#8217;&#8202;s
@@ -27,9 +32,7 @@ function Header() {
           <div className="bg"> </div>
         </div>
       </div>
-      <nav>
-        <GNBList isOpen={isOpen} />
-      </nav>
+      <GNBList isOpen={isOpen} isNavClicked={isNavClicked} />
     </header>
   );
 }

@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { data } from "../data/data.js";
 import ImageBox from "./ImageBox.js";
+import { animate } from "./animate.js";
 
-let currentHeight;
-
-const ImageSlider = React.forwardRef(({ size, dataType, isSelected }) => {
+const ImageSlider = ({ dataType, isSelected }) => {
   const slider = useRef(null);
   const [height, setHeight] = useState();
   const [loaded, setLoaded] = useState(false);
@@ -19,26 +18,26 @@ const ImageSlider = React.forwardRef(({ size, dataType, isSelected }) => {
     setLoaded(true);
   };
 
-  const show = () => {
+  useEffect(() => {
     if (!height) return;
-    slider.current.style.height = `${height}px`;
-  };
+    if (!isSelected) {
+      slider.current.style.height = `0px`;
 
-  const hide = () => {
-    if (!height) return;
-    slider.current.style.height = `0px`;
-  };
+    } else {
+      slider.current.style.height = height + "px";
+      animate(slider.current, height);
+    }
 
-  console.log("loaded", loaded);
+  }, [isSelected, height]);
 
   return (
     <div className="slider-wrapper" ref={slider}>
       <div className="image-slider">
         {data[dataType].map((it) => (
-          <ImageBox key={it.id} {...it} style={{ height: isSelected ? show() : hide() }} onLoaded={handleImageLoaded} />
+          <ImageBox key={it.id} {...it} onLoaded={handleImageLoaded} />
         ))}
       </div>
     </div>
   );
-});
+};
 export default ImageSlider;
