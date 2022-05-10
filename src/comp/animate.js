@@ -7,7 +7,8 @@ export const animate = (target, value) => {
       height: value + "px"
     }
   ], {
-    duration: 500
+    duration: 600,
+    easing: "cubic-bezier(0.19, 1, 0.22, 1)"
   })
 }
 
