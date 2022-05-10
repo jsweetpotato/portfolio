@@ -7,14 +7,19 @@ header {
     position: fixed;
     width: 90%;
     display: flex;
-    justify-content: space-between;
-    z-index: 2;
+    justify-content: end;
+    z-index: 1;
 
     .title {
+      position: absolute;
+      left: 0;
       font-size: 1.25rem;
       letter-spacing: -1px;
       line-height: 1.2;
       font-weight: 400;
+      user-select: none;
+      pointer-events: none;
+      z-index: -2;
 
       @media (min-width: 40em) {
         & {
@@ -27,9 +32,19 @@ header {
       display: flex;
       position: relative;
       gap: 2vmin;
+      z-index: 2;
     }
   }
 
+  .nav-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
   nav {
     position: absolute;
     margin-top: calc(8vh + 48px);
@@ -39,9 +54,19 @@ header {
     width: 100vw;
     gap: 2vmin;
     overflow-y: scroll;
+    z-index: 999;
+    user-select: none;
+    pointer-events: none;
 
     @media (min-width: 40em) {
       margin-top: calc(8vh + 60px);
     }
+  }
+}
+
+.open {
+  nav {
+    user-select: auto;
+    pointer-events: auto;
   }
 }

@@ -7,11 +7,9 @@
 .GNB {
   width: 100%;
   overflow-y: scroll;
-  // user-select: none;
-  pointer-events: none;
   display: flex;
   flex-direction: column;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
 
   .line {
     width: 100%;
@@ -52,9 +50,6 @@
 }
 
 .open .GNB {
-  user-select: auto;
-  pointer-events: auto;
-
   .line {
     opacity: 1;
     transform: translate3d(0, 0, 0);

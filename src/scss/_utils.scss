@@ -15,6 +15,7 @@
 }
 
 body {
+  position: relative;
   height: 100vh;
   overflow: hidden;
   font-family:  "Inter","Noto Sans KR", sans-serif;
@@ -42,6 +43,7 @@ li {
     top: 0;
     left: 0;
     outline: none;
+    z-index: -1;
   }
 }
 
