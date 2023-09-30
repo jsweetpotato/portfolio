@@ -2,6 +2,7 @@ import { useRef } from "react";
 
 function Footer() {
   const modal = useRef(null);
+  const copyalert = useRef(null);
 
   const openModal = () => {
     modal.current.classList.add("show-modal");
@@ -21,6 +22,14 @@ function Footer() {
     );
   };
 
+  const copyemail = () => {
+    navigator.clipboard.writeText("jsweetpotato37@gmail.com");
+    copyalert.current.classList.add("visible");
+    copyalert.current.addEventListener("animationend", () => {
+      copyalert.current.classList.remove("visible");
+    });
+  };
+
   return (
     <footer>
       <div className="left-side"></div>
@@ -32,11 +41,11 @@ function Footer() {
       </div>
       <dialog ref={modal} className="modal">
         <h2>안녕하세요! </h2>
-        <h3>UI/UX를 좋아하는 개발자 JISU입니다.</h3>
+        <h3>UI/UX와 Canvas를 좋아하는 개발자 지수입니다.</h3>
         <hr />
         <div className="madal-text">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Nostrum necessitatibus fugit fugiat iste nam perspiciatis aliquam mollitia explicabo dolorum quas</p>
+          <p>독학으로 CSS, html, javaScript를 공부했습니다!</p>
+          <p>Three.js, CSS3D 등 웹 애니메이션, 3D분야에 관심이 많습니다.</p>
         </div>
         <div className="contacts">
           <a className="item" href="https://github.com/jsweetpotato">
@@ -49,7 +58,14 @@ function Footer() {
             Notion
           </a>
           <div className="dot"></div>
-          <p className="item">Email</p>
+          <div className="alert-conatiner">
+            <p className="item" onClick={copyemail}>
+              Email
+            </p>
+            <span ref={copyalert} className="copy-alert">
+              Copied!!
+            </span>
+          </div>
         </div>
         <button className="close" onClick={closeModal}>
           <span></span>

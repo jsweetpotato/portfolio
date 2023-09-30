@@ -16,33 +16,28 @@ const data = [
   {
     id: 0,
     text: "RESPONSIVE WEB",
-    dataType: "responsive"
+    dataType: "responsive",
   },
   {
     id: 1,
     text: "CANVAS",
-    dataType: "canvas"
+    dataType: "canvas",
   },
   {
     id: 2,
     text: "REACT",
-    dataType: "react"
+    dataType: "react",
   },
   {
     id: 3,
-    text: "ECT",
-    dataType: "ect"
+    text: "THREE JS",
+    dataType: "threejs",
   },
 ];
 
 function App() {
   const [isMobile, setIsMobile] = useState(mobile);
   const [isOpen, setIsOpen] = useState(false);
-
-  // window.addEventListener("resize", () => {
-  //   if (window.innerWidth >= 700) setIsMobile(false);
-  //   if (window.innerWidth < 700) setIsMobile(true);
-  // });
 
   return (
     <DataContext.Provider value={data}>

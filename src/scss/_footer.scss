@@ -1,4 +1,24 @@
-@use "./color" ;
+@use "./color";
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translate(-26%, 25%);
+  }
+  100% {
+    transform: translate(-26%, 10%);
+  }
+}
 
 footer {
   width: 90vw;
@@ -13,12 +33,13 @@ footer {
   user-select: none;
   // z-index:1;
 
+  
   @media (max-width: 60em) {
-    &{
+    & {
       flex-direction: column-reverse;
       align-items: center;
 
-      .left-side{
+      .left-side {
         display: none;
       }
     }
@@ -32,17 +53,17 @@ footer {
     color: color.$license;
   }
 
-  .left-side{
+  .left-side {
     flex-basis: 25%;
   }
 
-  .right-side{
+  .right-side {
     flex-basis: 25%;
     display: flex;
     justify-content: flex-end;
   }
 
-  .contact-btn{
+  .contact-btn {
     padding: 0.8em 1.3em;
     font-size: 1.2rem;
     border-radius: 3em;
@@ -58,10 +79,26 @@ footer {
       }
     }
   }
+
+  .alert-container {
+    position: relative;
+  }
+  .copy-alert {
+    position: absolute;
+    background-color: bisque;
+    transform: translate(-26%, 25%);
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    display: none;
+  }
+  .visible {
+    display: block;
+    animation: fade 600ms cubic-bezier(0.075, 0.82, 0.165, 1), slide-up 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
 }
 
-.dark{
-  .contact-btn{
+.dark {
+  .contact-btn {
     filter: invert(100%);
     background-color: #e0e0e0;
   }

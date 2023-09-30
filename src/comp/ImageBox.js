@@ -3,7 +3,7 @@ import { useCallback } from "react";
 const ImageBox = ({ id, image, title, tag, url, onLoaded }) => {
   const handleLinkClick = useCallback((e) => {
     e.preventDefault();
-    window.open(url, "", "_blank");
+    window.open(url, "_blank");
   }, [url]);
 
   return (

@@ -4,7 +4,7 @@ const data = {
       id: 0,
       title: "loruki",
       image: "assets/loruki.png",
-      tag: ["Media Queries", "Vanila JS"],
+      tag: ["Media Queries", "Vanila JS", "Clone Coding"],
       url: "https://jsweetpotato.github.io/responsive-web-practice2.io/",
     },
     {
@@ -16,9 +16,9 @@ const data = {
     },
     {
       id: 2,
-      title: "portfolio clone",
+      title: "portfolio site",
       image: "assets/portfolio-clone.png",
-      tag: ["Media Queries", "Vanila JS"],
+      tag: ["Media Queries", "Vanila JS", "Clone Coding"],
       url: "https://jsweetpotato.github.io/responsive-web-practice4.io/",
     },
   ],
@@ -61,20 +61,27 @@ const data = {
       url: "https://jsweetpotato-emotion-diary.web.app/",
     },
   ],
-  ect: [
+  threejs: [
     {
       id: 0,
-      title: "cake",
-      image: "assets/cake.png",
-      tag: ["CSS3 3D Effect", "Vanila JS"],
-      url: "https://jsweetpotato.github.io/birthday.simulator.io/",
+      title: "RGB distort Menu",
+      image: "assets/distort.png",
+      tag: ["Clone Coding", "GLSL", "Vanila JS"],
+      url: "https://jsweetpotato.github.io/RGBdistortEffect/",
     },
     {
       id: 1,
-      title: "horror face",
-      image: "assets/horror-face.png",
-      tag: ["Only Web", "Vanila JS"],
-      url: "https://jsweetpotato.github.io/horrorface.io/",
+      title: "3d cosmetic",
+      image: "assets/cosmetic.png",
+      tag: ["Blender", "R3F"],
+      url: "https://cosmetic-rho.vercel.app/",
+    },
+    {
+      id: 2,
+      title: "Sun",
+      image: "assets/sun.png",
+      tag: ["Clone Coding", "GLSL", "Vanila JS"],
+      url: "https://sun-azure.vercel.app/",
     },
   ],
 };

@@ -18,6 +18,13 @@ export const animate = (target, value) => {
   );
 };
 
+export const finish = (target, value) => {
+  target.addEventListener("finish", () => {
+    target.style.height = value + "px";
+    console.log("finish");
+  });
+};
+
 export const animate2 = (target, value) => {
   target.animate(
     [

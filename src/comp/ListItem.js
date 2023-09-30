@@ -1,4 +1,4 @@
-import { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import ImageSlider from "./ImageSlider";
 import mixin from "../scss/_mixin.scss";
 
@@ -31,10 +31,7 @@ const ListItem = ({ height, text, dataType, isSelected, onClick }) => {
   };
 
   return (
-    <li
-      ref={li}
-      onClick={() => onClick()}
-      className={"list-item"}>
+    <li ref={li} onClick={() => onClick()} className={["list-item", isSelected ? "select" : "not-select"].join(" ")}>
       <span ref={span}>{text}</span>
       <ImageSlider size={mixin.spanSize} isSelected={isSelected} dataType={dataType} />
     </li>

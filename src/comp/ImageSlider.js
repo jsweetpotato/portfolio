@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { data } from "../data/data.js";
 import ImageBox from "./ImageBox.js";
-import { animate } from "./animate.js";
+import { animate, finish } from "./animate.js";
 
 const ImageSlider = ({ dataType, isSelected }) => {
   const slider = useRef(null);
@@ -11,6 +11,7 @@ const ImageSlider = ({ dataType, isSelected }) => {
   useEffect(() => {
     if (loaded) {
       setHeight(slider.current.clientHeight);
+      console.log(slider.current.clientHeight);
     }
   }, [slider, loaded]);
 
@@ -22,12 +23,12 @@ const ImageSlider = ({ dataType, isSelected }) => {
     if (!height) return;
     if (!isSelected) {
       slider.current.style.height = `0px`;
-
     } else {
-      slider.current.style.height = height + "px";
       animate(slider.current, height);
+      setTimeout(() => {
+        slider.current.style.height = height + `px`;
+      }, 500);
     }
-
   }, [isSelected, height]);
 
   return (

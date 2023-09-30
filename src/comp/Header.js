@@ -12,10 +12,11 @@ function Header() {
 
   return (
     <header
-      onClick={({ target }) => {
-        if (!target.closest(".list-item")) setIsNavClicked();
-        else setIsNavClicked(true);
-      }}>
+    // onClick={({ target }) => {
+    //   if (!target.closest(".list-item")) setIsNavClicked();
+    //   else setIsNavClicked(true);
+    // }}
+    >
       <div className="header-top">
         <h1 className="title">
           JISUKIM&#8217;&#8202;s
